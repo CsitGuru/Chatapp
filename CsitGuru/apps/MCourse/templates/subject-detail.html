@@ -1,0 +1,142 @@
+{% extends 'frontendbase.html' %}
+{% load static %}
+
+{% block title %}
+   {{subject.name}}
+{% endblock %}
+
+{% block banner %}
+{% endblock %}
+
+{% block extra %}
+{% endblock %}
+
+{% block active_csit %} active {% endblock %}
+{% block main %}
+
+<main id="main">
+  <div class="course-banner"></div>
+   <section id="semester" class="semester">
+ 
+      <div class="container">
+        <div class="section-title">
+ 
+          <p>{{subject.name}}</p>
+        </div>
+  
+ 
+            <div class="tab-container">
+              <div class="tab-header">
+
+                <div class="row">
+                  <div class="col-md-6 col-lg-12 ">
+                    <button class="button active" data-target-tab="#syllabus">Syllabus</button>
+                    <button class="button" data-target-tab="#oldqns">Old Questions</button>
+                    <button class="button" data-target-tab="#oldqnsoln">Old Question Solution</button>
+                    <button class="button " data-target-tab="#notes">Notes</button>
+                    <button class="button" data-target-tab="#books">Books</button>
+                  </div>
+
+                </div>    
+               
+      
+              
+              </div>
+              <div class="tab-body">
+                <div class="tab-content active" id="syllabus">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+                    voluptatibus perspiciatis aspernatur fugit similique cumque dolores
+                    assumenda totam eius ab, iusto unde deleniti ex fugiat modi placeat,
+                    nam porro iste.
+                  </p>
+                </div>
+                <div class="tab-content" id="notes">
+                  <div class="row gx-3 gy-4">
+
+                    <div class="col-md-4 col-lg-4 col-xl-4 mb-5 mb-lg-0">
+                      <div class="card">
+                        <div class="d-flex  justify-content-center align-items-center p-2">
+                          <div class="file-icon"><i class="bi bi-file-earmark-fill"></i></div>
+                          <div class="container notice-div">
+                              <h5>Mathematics Chapter 5 Note</h5>
+                              <p>By Ankit Pagemi | on July 2020</p>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-4 col-lg-4 col-xl-4 mb-5 mb-lg-0">
+                      <div class="card">
+                        <div class="d-flex justify-content-center align-items-center p-2">
+                          <div class="file-icon"><i class="bi bi-file-earmark-fill"></i></div>
+                          <div class="container notice-div">
+                              <h5>Mathematics Chapter 1 Note</h5>
+                              <p>By Ankit Pagemi | on July 2021</p>
+                            </div>
+                          </div>
+                      </div>
+  
+                      </div>
+                  
+                      <div class="col-md-4 col-lg-4 col-xl-4 mb-5 mb-lg-0">
+                        <div class="card">
+                          <div class="d-flex justify-content-center align-items-center p-2">
+                            <div class="file-icon"><i class="bi bi-file-earmark-fill"></i></div>
+                            <div class="container notice-div">
+                                <h5>Mathematics Chapter 6 Note</h5>
+                                <p>By Sameer Shahi | on July 2022</p>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+
+
+  
+                  </div>
+                </div>
+                <div class="tab-content" id="oldqns">
+   
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+                    voluptatibus perspiciatis aspernatur fugit similique cumque dolores
+                    assumenda totam eius ab, iusto unde deleniti ex fugiat modi placeat,
+                    nam porro iste.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+     
+      </div>
+  </section>
+
+
+</main>
+{% endblock %}
+
+
+{% block script %}
+<script>
+  const btns = document.querySelectorAll(".button");
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btns.forEach((btn) => btn.classList.remove("active"));
+
+    btn.classList.add("active");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    // tabContents.forEach((tabContent) => {
+    //   tabContent.className = tabContent.className.replace("active", "");
+    // });
+
+    tabContents.forEach((tab) => tab.classList.remove("active"));
+
+    document.querySelector(btn.dataset.targetTab).classList.add("active");
+  });
+});
+
+</script>
+
+{% endblock %}
