@@ -39,23 +39,6 @@ CORS_ALLOWED_ORIGINS = [
 DATABASES = {
     "default": {
         "ENGINE": 'django.db.backends.postgresql',
-        "NAME": 'railway',
-        "USER": 'postgres',
-        "PASSWORD": 'o2DOClw5d7E1e8yIRqEK',
-        "HOST": 'containers-us-west-73.railway.app',
-        "PORT": 5640,
-    }
-}
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-
-DATABASES = {
-    "default": {
-        "ENGINE": 'django.db.backends.postgresql',
         "NAME": env.str("DATABASE_NAME"),
         "USER": env.str("DATABASE_USER"),
         "PASSWORD": env.str("DATABASE_PASSWORD"),
@@ -64,15 +47,10 @@ DATABASES = {
     }
 }
 
-
 DATABASES = {
     "default": {
-        "ENGINE": 'django.db.backends.postgresql',
-        "NAME": 'postgres',
-        "USER": 'postgres',
-        "PASSWORD": 'ProgrammerGodRobo123',
-        "HOST": 'db.cblbmwgycgevasrvfenp.supabase.co',
-        "PORT": 5432,
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -80,10 +58,15 @@ DATABASES = {
 """
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": 'django.db.backends.postgresql',
+        "NAME": 'railway',
+        "USER": 'postgres',
+        "PASSWORD": 'wI9kcn3ctMrMyzhyWNRZ',
+        "HOST": 'containers-us-west-158.railway.app',
+        "PORT": 6342,
     }
 }
+
 
 
 

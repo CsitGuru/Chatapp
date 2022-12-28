@@ -30,8 +30,12 @@ SESSION_COOKIE_AGE = 60 * 60 * 60 * 24
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": 'django.db.backends.postgresql',
+        "NAME": 'railway',
+        "USER": 'postgres',
+        "PASSWORD": 'wI9kcn3ctMrMyzhyWNRZ',
+        "HOST": 'containers-us-west-158.railway.app',
+        "PORT": 6342,
     }
 }
 
