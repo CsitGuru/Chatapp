@@ -47,6 +47,8 @@ DATABASES = {
     }
 }
 
+
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -56,6 +58,7 @@ DATABASES = {
 
 
 """
+
 DATABASES = {
     "default": {
         "ENGINE": 'django.db.backends.postgresql',
@@ -67,7 +70,11 @@ DATABASES = {
     }
 }
 
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env.str("CLOUDINARY_CLOUD_NAME"),
+    'API_KEY': env.str("CLOUDINARY_API_KEY"),
+    'API_SECRET': env.str("CLOUDINARY_API_SECRET")
+}
 
 
 db_from_env = dj_database_url.config(conn_max_age=600)
@@ -78,14 +85,10 @@ STATIC_URL = "/staticfiles/"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles")]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 MEDIA_ROOT = os.path.join(BASE_DIR, "staticfiles/mediafiles")
 MEDIA_URL = "/mediafiles/"
 
-# DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 
 # SMTP CONFIGURATION

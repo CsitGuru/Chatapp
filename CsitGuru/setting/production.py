@@ -50,6 +50,11 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env.str("CLOUDINARY_CLOUD_NAME"),
+    'API_KEY': env.str("CLOUDINARY_API_KEY"),
+    'API_SECRET': env.str("CLOUDINARY_API_SECRET")
+}
 
 
 # CACHE FRAMEWORK
@@ -94,6 +99,9 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "staticfiles/mediafiles")
 MEDIA_URL = "/mediafiles/"
+
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # SMTP CONFIGURATION
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
