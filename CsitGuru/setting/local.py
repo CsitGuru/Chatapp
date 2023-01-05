@@ -33,7 +33,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env.str("CLOUDINARY_CLOUD_NAME"),
+    'API_KEY': env.str("CLOUDINARY_API_KEY"),
+    'API_SECRET': env.str("CLOUDINARY_API_SECRET")
+}
 
 """
 DATABASES = {
@@ -68,12 +72,6 @@ DATABASES = {
         "HOST": 'containers-us-west-158.railway.app',
         "PORT": 6342,
     }
-}
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env.str("CLOUDINARY_CLOUD_NAME"),
-    'API_KEY': env.str("CLOUDINARY_API_KEY"),
-    'API_SECRET': env.str("CLOUDINARY_API_SECRET")
 }
 
 

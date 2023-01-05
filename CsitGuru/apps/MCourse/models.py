@@ -138,12 +138,6 @@ class QuestionSolution(models.Model):
     name = models.CharField(null=True, max_length=200)
     qs_slug = models.SlugField(null=True, editable=False)
     files = models.FileField(blank=True)
-    description = RichTextUploadingField(
-        null=True,
-        help_text=_("Describe something.Dont repeat yourself."),
-        config_name="default",
-        blank=True
-    )
     link = models.URLField(null=True,blank=True)    
     files = models.FileField(null=True ,blank=True)
     added_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

@@ -11,7 +11,10 @@ DEFAULT_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.postgres",
+            'cloudinary_storage',
     "django.contrib.staticfiles",
+
+            'cloudinary',
 ]
 
 EXPLICT_APPS = [
@@ -30,6 +33,7 @@ THIRDPARTY_PLUGIN = [
     "whitenoise",
     'rest_framework',
     'corsheaders'
+
 ]
 
 
@@ -143,6 +147,8 @@ CKEDITOR_CONFIGS = {
 '''
 We are telling heroku to use gunicorn web server through Procfile created in same directory as manage.py"""
 '''
+
+
 
 ROOT_URLCONF = "CsitGuru.urls"
 
